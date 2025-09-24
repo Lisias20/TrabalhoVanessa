@@ -1,0 +1,255 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilos globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0c1d;
+    color: #e0e0e0;
+}
+
+/* Header e Navegação */
+header {
+    background-color: #1a1836;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6a4a9c;
+}
+
+/* Botão de Ação (CTA) */
+.cta-button {
+    background-color: #6a4a9c;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #8c6db2;
+}
+
+.small-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Seções Principais */
+main {
+    padding: 2rem 0;
+}
+
+/* Seção Hero (Banner) */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: #2a2846;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Seção de Notícias */
+.latest-news {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.news-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.news-item {
+    background-color: #1a1836;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex-basis: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Seção Sobre Resumo */
+.about-summary {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #1a1836;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1a1836;
+    margin-top: 2rem;
+}
+
+/* Estilos para Páginas Internas */
+.page-header {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #1a1836;
+    margin-bottom: 2rem;
+}
+
+.content-section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.text-block h2 {
+    color: #6a4a9c;
+}
+
+/* Estilos para a seção de equipe */
+.team-section {
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    flex-basis: 200px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #6a4a9c;
+}
+
+/* Estilos para a grade de projetos */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.project-card {
+    background-color: #1a1836;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Estilos para o formulário de contato */
+.contact-form-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1a1836;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #3d3b66;
+    background-color: #2a2846;
+    color: #e0e0e0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .news-container, .team-container, .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-item, .project-card {
+        flex-basis: 90%;
+    }
+}
