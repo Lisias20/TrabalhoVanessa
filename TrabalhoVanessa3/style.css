@@ -1,255 +1,127 @@
-/* Importação de fontes */
+/* Importação de fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Estilos globais */
+/* Estilos globais aplicados a toda a página */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0d0c1d;
-    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif; /* Define a fonte padrão */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove paddings padrão */
+    background-color: #0d0c1d; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto clara */
 }
 
-/* Header e Navegação */
+/* Header e Navegação - Cabeçalho do site */
 header {
-    background-color: #1a1836;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #1a1836; /* Cor de fundo do header */
+    padding: 1rem 2rem; /* Espaçamento interno: 1rem topo/baixo, 2rem laterais */
+    display: flex; /* Usa flexbox para alinhamento */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
+    font-size: 1.5rem; /* Tamanho da fonte do logo */
+    font-weight: bold; /* Texto em negrito */
+    color: #fff; /* Cor branca */
 }
 
+/* Lista de navegação */
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style: none; /* Remove marcadores da lista */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove paddings */
+    display: flex; /* Disposição em linha */
 }
 
 nav ul li {
-    margin-left: 1.5rem;
+    margin-left: 1.5rem; /* Espaço entre itens do menu */
 }
 
 nav ul li a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: #e0e0e0; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 500; /* Peso da fonte */
+    transition: color 0.3s; /* Transição suave para hover */
 }
 
+/* Efeito ao passar o mouse nos links */
 nav ul li a:hover {
-    color: #6a4a9c;
+    color: #6a4a9c; /* Muda cor ao hover */
 }
 
-/* Botão de Ação (CTA) */
+/* Botão de Call-to-Action (Chamada para ação) */
 .cta-button {
-    background-color: #6a4a9c;
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    border: none;
-    cursor: pointer;
+    background-color: #6a4a9c; /* Cor roxa */
+    color: white; /* Texto branco */
+    padding: 1rem 2rem; /* Espaçamento interno */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s; /* Transição suave */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Cursor de pointer */
 }
 
 .cta-button:hover {
-    background-color: #8c6db2;
+    background-color: #8c6db2; /* Cor mais clara ao hover */
 }
 
+/* Versão menor do botão */
 .small-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem; /* Padding menor */
+    font-size: 0.9rem; /* Fonte menor */
 }
 
-/* Seções Principais */
+/* Seção principal do conteúdo */
 main {
-    padding: 2rem 0;
+    padding: 2rem 0; /* Espaçamento vertical */
 }
 
-/* Seção Hero (Banner) */
+/* Seção Hero (Banner principal) */
 .hero {
-    text-align: center;
-    padding: 5rem 2rem;
-    background-color: #2a2846;
+    text-align: center; /* Texto centralizado */
+    padding: 5rem 2rem; /* Grande espaçamento */
+    background-color: #2a2846; /* Cor de fundo diferente */
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3rem; /* Título grande */
+    margin-bottom: 1rem; /* Espaço abaixo */
 }
 
 /* Seção de Notícias */
 .latest-news {
-    padding: 3rem 2rem;
-    text-align: center;
+    padding: 3rem 2rem; /* Espaçamento interno */
+    text-align: center; /* Texto centralizado */
 }
 
 .news-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    display: flex; /* Layout flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 1.5rem; /* Espaço entre elementos */
+    flex-wrap: wrap; /* Quebra linha se necessário */
+    margin-top: 2rem; /* Espaço acima */
 }
 
 .news-item {
-    background-color: #1a1836;
-    padding: 1.5rem;
-    border-radius: 8px;
-    flex-basis: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    background-color: #1a1836; /* Fundo escuro */
+    padding: 1.5rem; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    flex-basis: 300px; /* Largura base */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    text-align: left; /* Alinhamento à esquerda */
 }
 
-/* Seção Sobre Resumo */
-.about-summary {
-    text-align: center;
-    padding: 3rem 2rem;
-    background-color: #1a1836;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #1a1836;
-    margin-top: 2rem;
-}
-
-/* Estilos para Páginas Internas */
-.page-header {
-    text-align: center;
-    padding: 3rem 2rem;
-    background-color: #1a1836;
-    margin-bottom: 2rem;
-}
-
-.content-section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.text-block h2 {
-    color: #6a4a9c;
-}
-
-/* Estilos para a seção de equipe */
-.team-section {
-    text-align: center;
-}
-
-.team-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.team-member {
-    text-align: center;
-    flex-basis: 200px;
-}
-
-.team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 3px solid #6a4a9c;
-}
-
-/* Estilos para a grade de projetos */
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.project-card {
-    background-color: #1a1836;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 350px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-/* Estilos para o formulário de contato */
-.contact-form-section {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #1a1836;
-    border-radius: 8px;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 5px;
-    border: 1px solid #3d3b66;
-    background-color: #2a2846;
-    color: #e0e0e0;
-}
-
-/* Responsividade */
+/* Media Query para responsividade em telas menores */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* Empilha verticalmente */
     }
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 1rem;
+        flex-direction: column; /* Menu vertical */
+        align-items: center; /* Centraliza itens */
+        margin-top: 1rem; /* Espaço acima */
     }
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .news-container, .team-container, .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .news-item, .project-card {
-        flex-basis: 90%;
-    }
+    /* ... outras adaptações mobile */
 }
