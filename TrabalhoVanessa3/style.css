@@ -6,13 +6,13 @@ body {
     font-family: 'Roboto', sans-serif; /* Define a fonte padrão */
     margin: 0; /* Remove margens padrão do navegador */
     padding: 0; /* Remove paddings padrão */
-    background-color: #0d0c1d; /* Cor de fundo escura */
-    color: #e0e0e0; /* Cor do texto clara */
+    background-color: #ffffff; /* Cor de fundo escura */
+    color: #000000; /* Cor do texto clara */
 }
 
 /* Header e Navegação - Cabeçalho do site */
 header {
-    background-color: #1a1836; /* Cor de fundo do header */
+    background-color: #eba40c; /* Cor de fundo do header */
     padding: 1rem 2rem; /* Espaçamento interno: 1rem topo/baixo, 2rem laterais */
     display: flex; /* Usa flexbox para alinhamento */
     justify-content: space-between; /* Espaço entre logo e menu */
@@ -23,7 +23,7 @@ header {
 .logo {
     font-size: 1.5rem; /* Tamanho da fonte do logo */
     font-weight: bold; /* Texto em negrito */
-    color: #fff; /* Cor branca */
+    color: #ffffff; /* Cor branca */
 }
 
 /* Lista de navegação */
@@ -31,7 +31,7 @@ nav ul {
     list-style: none; /* Remove marcadores da lista */
     margin: 0; /* Remove margens */
     padding: 0; /* Remove paddings */
-    display: flex; /* Disposição em linha */
+    display: table; /* Disposição em linha */
 }
 
 nav ul li {
@@ -41,7 +41,7 @@ nav ul li {
 nav ul li a {
     color: #e0e0e0; /* Cor dos links */
     text-decoration: none; /* Remove sublinhado */
-    font-weight: 500; /* Peso da fonte */
+    font-weight: 600; /* Peso da fonte */
     transition: color 0.3s; /* Transição suave para hover */
 }
 
@@ -82,7 +82,7 @@ main {
 .hero {
     text-align: center; /* Texto centralizado */
     padding: 5rem 2rem; /* Grande espaçamento */
-    background-color: #2a2846; /* Cor de fundo diferente */
+    background-color: #eba40c; /* Cor de fundo diferente */
 }
 
 .hero h1 {
