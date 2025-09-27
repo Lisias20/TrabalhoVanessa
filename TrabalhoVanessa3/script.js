@@ -31,3 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
         newsContainer.appendChild(article);
     });
 });
+
+// Botão de alternância de tema
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+// Checa se já existe tema salvo no localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.body.classList.add(savedTheme);
+} else {
+    document.body.classList.add('light-theme'); // padrão
+}
+
+// Atualiza o ícone conforme o tema
+function updateThemeIcon() {
+    if (document.body.classList.contains('dark-theme')) {
+        themeToggleBtn.textContent = "🌙"; 
+    } else {
+        themeToggleBtn.textContent = "🌞"; 
+    }
+}
+
+updateThemeIcon();
+
+// Alternar tema ao clicar
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    document.body.classList.toggle('light-theme');
+
+    // Salva no localStorage
+    if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark-theme');
+    } else {
+        localStorage.setItem('theme', 'light-theme');
+    }
+
+    updateThemeIcon();
+});
