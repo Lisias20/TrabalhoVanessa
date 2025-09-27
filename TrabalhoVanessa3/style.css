@@ -31,7 +31,7 @@ nav ul {
     list-style: none; /* Remove marcadores da lista */
     margin: 0; /* Remove margens */
     padding: 0; /* Remove paddings */
-    display: flex; /* Disposição em linha */
+    display: table; /* Disposição em linha */
 }
 
 nav ul li {
@@ -41,7 +41,7 @@ nav ul li {
 nav ul li a {
     color: #ffffff; /* Cor dos links */
     text-decoration: none; /* Remove sublinhado */
-    font-weight: 500; /* Peso da fonte */
+    font-weight: 600; /* Peso da fonte */
     transition: color 0.3s; /* Transição suave para hover */
 }
 
