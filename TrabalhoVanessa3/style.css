@@ -1,14 +1,28 @@
 /* ========== IMPORTAÇÃO DE FONTES ========== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* ========== VARIÁVEIS CSS (Otimização do tema) ========== */
+:root {
+    --primary-color: #eba40c;
+    --text-light: #ffffff;
+    --text-dark: #333;
+    --bg-header-light: var(--primary-color);
+    --bg-header-dark: #1f1f1f;
+    --bg-body-light: #ffffff;
+    --bg-body-dark: #121212;
+    --card-bg-light: #fff;
+    --card-bg-dark: #1e1e1e;
+}
+
 /* ========== ESTILOS GLOBAIS ========== */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: var(--bg-body-light);
     color: #000000;
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -16,44 +30,107 @@ a {
     color: inherit;
 }
 
-/* ========== HEADER & NAVBAR ========== */
+/* ========== HEADER & NAVBAR CORRIGIDA (Versão Final) ========== */
 header {
-    background-color: #eba40c;
+    background-color: var(--bg-header-light);
     padding: 1rem 2rem;
+    /* CHAVE: Distribui Logo | Nav Central | Filler de forma uniforme */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
+/* Logo (Lado Esquerdo) */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--text-light);
+    z-index: 51;
+    /* CHAVE: Define a largura para equilibrar o layout */
+    flex-basis: 140px; 
+    flex-shrink: 0;
+}
+/* O logo em si (a imagem) */
+.logo a img {
+    max-width: 100%;
+    height: auto;
 }
 
+/* Container do Menu (NAV) - (Meio) */
+nav {
+    /* Ocupa todo o espaço central restante */
+    flex-grow: 1; 
+    /* CHAVE: Centraliza o UL dentro do NAV */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nav Menu Desktop (UL) */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    margin-left: 1.5rem;
+    margin: 0 1.5rem;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--text-light);
     font-weight: 600;
-    transition: color 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de Sublinhado */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--text-light);
+    transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #333;
+    color: var(--text-light);
 }
 
-/* Tema Toggle Button */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Item de alinhamento invisível (Lado Direito) */
+.nav-filler {
+    /* CHAVE: Tem a mesma largura do logo para forçar o alinhamento central */
+    flex-basis: 140px;
+    flex-shrink: 0;
+    visibility: hidden; /* Invisível, mas ocupa espaço */
+}
+
+/* Menu Toggle e Tema Toggle (mantidos) */
+#nav-toggle {
+    display: none;
+}
+.nav-toggle-label {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    order: 3;
+}
+
 .theme-toggle {
     position: fixed;
     top: 15px;
@@ -72,7 +149,7 @@ nav ul li a:hover {
 
 /* ========== BOTÕES (CTA) ========== */
 .cta-button {
-    background-color: #eba40c;
+    background-color: var(--primary-color);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
@@ -94,7 +171,7 @@ nav ul li a:hover {
 .hero {
     text-align: center;
     padding: 5rem 2rem;
-    background-color: #eba40c;
+    background-color: var(--primary-color);
     color: #fff;
 }
 .hero h1 {
@@ -111,135 +188,12 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* ==== CARD DESTAQUE ==== */
-.featured-project {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.featured-project .project-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  overflow: hidden;
-}
-
-.featured-project img.card-image {
-  width: 100%;
-  height: 320px;       /* maior que os outros */
-  object-fit: cover;
-}
-
-.featured-project .card-content {
-  padding: 2rem;
-}
-
-.featured-project h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.featured-project p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-body.dark-theme .featured-project .project-card {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-}
-/* ====== CARD DESTAQUE ESTILO BANNER ====== */
-.featured-project {
-  max-width: 1000px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-.featured-container {
-  display: flex;
-  flex-wrap: wrap; /* Permite quebrar em telas pequenas */
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  overflow: hidden;
-}
-
-/* Lado da imagem */
-.featured-image {
-  flex: 1 1 45%; /* ocupa 45% do espaço no desktop */
-  min-width: 300px;
-}
-.featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Lado do texto */
-.featured-content {
-  flex: 1 1 55%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.featured-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.featured-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-.featured-content ul {
-  padding-left: 1.2rem;
-  margin-top: 1rem;
-}
-.featured-content li {
-  margin-bottom: 0.6rem;
-}
-
-/* Dark theme */
-body.dark-theme .featured-container {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-}
-body.dark-theme .featured-content h2 {
-  color: #f7f7f7;
-}
-body.dark-theme .featured-content p,
-body.dark-theme .featured-content li {
-  color: #dcdcdc;
-}
-
-/* Responsivo */
-@media (max-width: 900px) {
-  .featured-container {
-    flex-direction: column;
-  }
-  .featured-image, .featured-content {
-    flex: 1 1 100%;
-  }
-  .featured-content {
-    padding: 1.5rem;
-  }
-  .featured-content h2 {
-    font-size: 1.6rem;
-  }
-}
 
 /* CARD */
 .project-card {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--card-bg-light);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -268,12 +222,12 @@ body.dark-theme .featured-content li {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--text-dark);
 }
 .card-content h4 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #eba40c;
+    color: var(--primary-color);
     margin-top: 1.2rem;
     margin-bottom: 0.5rem;
 }
@@ -293,24 +247,60 @@ body.dark-theme .featured-content li {
     align-self: flex-start;
 }
 
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    nav ul {
-        flex-direction: column;
-        margin-top: 1rem;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+/* ==== CARD DESTAQUE (Banner) ==== */
+.featured-project {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
 }
+
+.featured-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--card-bg-light);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+/* Lado da imagem */
+.featured-image {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lado do texto */
+.featured-content {
+    flex: 1 1 55%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.featured-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+.featured-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+.featured-content ul {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+}
+.featured-content li {
+    margin-bottom: 0.6rem;
+}
+
+
 /* ==== TEAM SECTION ==== */
 .team-container {
     display: grid;
@@ -326,7 +316,7 @@ body.dark-theme .featured-content li {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--card-bg-light);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -340,16 +330,16 @@ body.dark-theme .featured-content li {
 
 .team-member img {
     width: 100%;
-    height: auto;        /* Mostra a altura real da foto */
-    object-fit: contain; /* Garante que não vai cortar o rosto */
-    border-bottom: 3px solid #eba40c; /* Detalhe bacana */
+    height: auto;
+    object-fit: contain;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .team-member h3 {
     font-size: 1.2rem;
     margin: 1rem 0 0.5rem;
     font-weight: 700;
-    color: #333;
+    color: var(--text-dark);
 }
 
 .team-member p {
@@ -358,9 +348,84 @@ body.dark-theme .featured-content li {
     color: #666;
 }
 
+/* ========== DARK THEME: Aplicação das variáveis ========== */
+body.dark-theme {
+    background-color: var(--bg-body-dark);
+    color: #f1f1f1;
+}
+
+/* Header no Dark */
+body.dark-theme header {
+    background-color: var(--bg-header-dark);
+}
+body.dark-theme .logo {
+    color: #f1f1f1;
+}
+body.dark-theme nav ul li a {
+    color: #f1f1f1;
+}
+body.dark-theme nav ul li a:hover {
+    color: var(--primary-color);
+}
+body.dark-theme nav ul li a::after {
+    background-color: #f1f1f1;
+}
+body.dark-theme nav ul li a:hover::after {
+    background-color: var(--primary-color);
+}
+body.dark-theme .nav-toggle-label {
+    color: #f1f1f1;
+}
+
+/* Hero no Dark */
+body.dark-theme .hero {
+    background-color: var(--bg-header-dark);
+    color: #f7f7f7;
+}
+
+/* Cards no Dark */
+body.dark-theme .project-card {
+    background-color: var(--card-bg-dark);
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+body.dark-theme .card-content h3 {
+    color: #f7f7f7;
+}
+body.dark-theme .card-content h4 {
+    color: var(--primary-color);
+}
+body.dark-theme .card-content p,
+body.dark-theme .card-content ul li {
+    color: #dcdcdc;
+}
+
+/* Botões no Dark */
+body.dark-theme .cta-button {
+    background-color: var(--primary-color);
+    color: var(--bg-body-dark);
+}
+body.dark-theme .cta-button:hover {
+    background-color: #ffc046;
+    color: #000;
+}
+
+/* Dark Theme - Featured Project */
+body.dark-theme .featured-container {
+    background-color: var(--card-bg-dark);
+    color: #f1f1f1;
+}
+body.dark-theme .featured-content h2 {
+    color: #f7f7f7;
+}
+body.dark-theme .featured-content p,
+body.dark-theme .featured-content li {
+    color: #dcdcdc;
+}
+
 /* Dark Theme específico para equipe */
 body.dark-theme .team-member {
-    background-color: #1e1e1e;
+    background-color: var(--card-bg-dark);
     color: #f1f1f1;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
@@ -371,58 +436,93 @@ body.dark-theme .team-member p {
     color: #ccc;
 }
 body.dark-theme .team-member img {
-    border-bottom: 3px solid #eba40c;
+    border-bottom: 3px solid var(--primary-color);
 }
 
-/* ========== DARK THEME ========== */
-body.dark-theme {
-    background-color: #121212;
-    color: #f1f1f1;
-}
+/* ========== RESPONSIVIDADE (MOBILE) ========== */
+@media (max-width: 768px) {
+    
+    /* Navbar Otimizada - Mobile */
+    header {
+        /* Remove o filler e ajusta para mobile */
+        justify-content: space-between;
+    }
 
-/* Header no Dark */
-body.dark-theme header {
-    background-color: #1f1f1f;
-}
-body.dark-theme .logo {
-    color: #f1f1f1;
-}
-body.dark-theme nav ul li a {
-    color: #f1f1f1;
-}
-body.dark-theme nav ul li a:hover {
-    color: #eba40c;
-}
+    /* Esconde o elemento filler no mobile */
+    .nav-filler {
+        display: none; 
+    }
 
-/* Hero no Dark */
-body.dark-theme .hero {
-    background-color: #1f1f1f;
-    color: #f7f7f7;
-}
+    /* Ajusta o logo para ocupar menos espaço no mobile */
+    .logo {
+        flex-basis: auto; 
+    }
+    
+    .nav-toggle-label {
+        display: block;
+    }
+    
+    /* Esconde o menu por padrão no mobile */
+    nav {
+        flex-grow: 0; 
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--bg-header-light);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        transition: max-height 0.4s ease-in-out;
+        justify-content: flex-start; 
+    }
 
-/* Cards no Dark */
-body.dark-theme .project-card {
-    background-color: #1e1e1e;
-    color: #f1f1f1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-}
-body.dark-theme .card-content h3 {
-    color: #f7f7f7;
-}
-body.dark-theme .card-content h4 {
-    color: #eba40c;
-}
-body.dark-theme .card-content p,
-body.dark-theme .card-content ul li {
-    color: #dcdcdc;
-}
+    nav ul {
+        flex-direction: column;
+        padding: 1rem 2rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
 
-/* Botões no Dark */
-body.dark-theme .cta-button {
-    background-color: #eba40c;
-    color: #121212;
-}
-body.dark-theme .cta-button:hover {
-    background-color: #ffc046;
-    color: #000;
+    nav ul li a {
+        display: block;
+        padding: 0.8rem 0;
+        color: var(--text-light);
+        font-weight: 700;
+    }
+    
+    nav ul li a::after {
+        display: none;
+    }
+    nav ul li a:hover {
+        color: var(--primary-color);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    
+    /* Outras adaptações mobile */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .featured-container {
+        flex-direction: column;
+    }
+    .featured-image, .featured-content {
+        flex: 1 1 100%;
+    }
+    .featured-content {
+        padding: 1.5rem;
+    }
+    .featured-content h2 {
+        font-size: 1.6rem;
+    }
 }
