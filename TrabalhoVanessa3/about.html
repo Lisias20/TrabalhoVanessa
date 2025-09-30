@@ -1,117 +1,136 @@
 <!DOCTYPE html>
-<!-- Declaração do tipo de documento HTML5 -->
 <html lang="pt-br">
-<!-- Define o idioma da página como português brasileiro -->
 
 <head>
-    <!-- Cabeçalho com metadados e configurações -->
-    <meta charset="UTF-8">
-    <!-- Define a codificação de caracteres como UTF-8 (suporta acentos) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configura viewport para responsividade em dispositivos móveis -->
-    <title>Sobre Nós - Sua ONG</title>
-    <!-- Título específico da página que aparece na aba do navegador -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Vincula o arquivo CSS que define todos os estilos visuais -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós - Sua ONG</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <button id="theme-toggle" class="theme-toggle">🌞</button>
-    <!-- Corpo da página - conteúdo visível para o usuário -->
+<body class="light-theme">
+  <!-- Botão fixo para alternar tema -->
+  <button class="theme-toggle">🌙</button>
 
-    <header>
-        <!-- Cabeçalho do site (igual em todas as páginas) -->
-        <nav>
-            <!-- Menu de navegação principal -->
-            <div class="logo"><img src="" alt=""></div>
-            <!-- Local para logo (atualmente vazio) -->
-            <ul>
-                <!-- Lista não ordenada com links de navegação -->
-                <li><a href="index.html">Home</a></li>
-                <!-- Item do menu: link para página inicial -->
-                <li><a href="about.html">Sobre Nós</a></li>
-                <!-- Item do menu: link para página atual (destacada) -->
-                <li><a href="projects.html">Nossos Projetos</a></li>
-                <!-- Item do menu: link para projetos -->
-                <li><a href="contact.html">Contato</a></li>
-                <!-- Item do menu: link para contato -->
-            </ul>
-        </nav>
-    </header>
+  <!-- CABEÇALHO -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo da ONG" height="40">
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Sobre Nós</a></li>
+        <li><a href="projects.html">Nossos Projetos</a></li>
+        <li><a href="contact.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <!-- Conteúdo principal específico desta página -->
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <!-- Introdução: História -->
+    <section class="page-header hero">
+      <h1>Nossa História e Propósito</h1>
+      <p>
+        Somos um grupo de quatro estudantes do curso de Análise e Desenvolvimento de Sistemas da Faculdade UNINASSAU.
+        Dentro da disciplina de Front-end Framework, decidimos desenvolver um projeto com impacto social e ambiental.
+        Criamos uma página web dedicada à energia sustentável, com foco em educação e conscientização. Nosso objetivo
+        é incentivar a transição energética, substituindo fontes não renováveis por alternativas limpas e renováveis.
+        <br><br>
+        Acreditamos que a tecnologia pode ser uma grande aliada na construção de um futuro mais verde. O projeto nasceu
+        da união entre nossa formação técnica e o desejo de contribuir com a sociedade. Queremos informar, inspirar e
+        mobilizar pessoas para práticas mais sustentáveis.
+      </p>
+    </section>
 
-        <section class="page-header">
-            <!-- Seção de cabeçalho da página interna -->
-            <h1>Nossa História e Propósito:</h1>
-            <!-- Título principal da página -->
-            <p>Somos um grupo de quatro estudantes do curso de Análise e Desenvolvimento de Sistemas da Faculdade UNINASSAU. Dentro da disciplina de Front-end Framework, decidimos desenvolver um projeto com impacto social e ambiental. Criamos uma página web dedicada à energia sustentável, com foco em educação e conscientização. Nosso objetivo é incentivar a transição energética, substituindo fontes não renováveis por alternativas limpas e renováveis. Acreditamos que a tecnologia pode ser uma grande aliada na construção de um futuro mais verde. O projeto nasceu da união entre nossa formação técnica e o desejo de contribuir com a sociedade. Queremos informar, inspirar e mobilizar pessoas para práticas mais sustentáveis. Nossa plataforma traz conteúdos acessíveis, dados atualizados e dicas práticas. Com isso, buscamos gerar reflexão e mudança de comportamento. Este é o nosso jeito de usar o conhecimento para transformar o mundo.</p>
-            <!-- Subtítulo/descrição -->
-        </section>
+    <!-- Missão e Visão -->
+    <section class="content-section">
+      <div class="text-block">
+        <h2>Missão e Visão</h2>
+        <p><strong>MISSÃO:</strong> Promover a conscientização sobre energia sustentável por meio de uma plataforma
+          digital acessível, educativa e interativa. Queremos usar nosso conhecimento em desenvolvimento web para
+          impactar positivamente a sociedade, contribuindo com a transição para fontes de energia limpas e renováveis.
+        </p>
+        <p><strong>VISÃO:</strong> Ser reconhecidos como um projeto acadêmico de referência na área de tecnologia e
+          sustentabilidade, inspirando outras iniciativas e pessoas a adotarem soluções energéticas responsáveis.</p>
+      </div>
+    </section>
 
-        <section class="content-section">
-            <!-- Seção de conteúdo textual -->
-            <div class="text-block">
-                <!-- Bloco de texto organizado -->
-                <h2>Missão e Visão:</h2>
-                <!-- Subtítulo da seção -->
-                <p>----------------.</p>
-                <!-- Parágrafo descritivo -->
-                <p>MISSĀO: <br>Nossa missão é promover a conscientização sobre energia sustentável por meio de uma plataforma digital acessível, educativa e interativa. Queremos usar nosso conhecimento em desenvolvimento web para impactar positivamente a sociedade, contribuindo com a transição para fontes de energia limpas e renováveis. <br>
-                <br>
-                VISĀO: <br> Ser reconhecidos como um projeto acadêmico de referência na área de tecnologia e sustentabilidade, inspirando outras iniciativas e pessoas a adotarem soluções energéticas responsáveis. Buscamos fomentar um futuro onde a energia sustentável seja a principal escolha da sociedade.</p>
-                <!-- Segundo parágrafo -->
-            </div>
-        </section>
+    <!-- Equipe -->
+    <section class="content-section team-section">
+      <h2>Nossa Equipe</h2>
+      <div class="team-container">
 
-        <section class="content-section team-section">
-            <!-- Seção da equipe (usa múltiplas classes) -->
-            <h2>Nossa Equipe:</h2>
-            <!-- Título da seção de equipe -->
-            <div class="team-container">
-                <!-- Container que organiza os membros da equipe -->
+        <!-- Membro 1 -->
+        <div class="team-member">
+          <img src="img/NossasFotos/Imagem do WhatsApp de 2025-09-25 à(s) 08.33.05_8806f621.jpg" alt="Foto de Cláudio Lísias">
+          <h3>Cláudio Lísias</h3>
+          <p>Graduando em ADS.</p>
+        </div>
 
-                <div class="team-member">
-                    <!-- Card individual de cada membro -->
-                    <img src="fotos da equipe/clàudio Imagem do WhatsApp de 2025-09-25 à(s) 08.36.55_11205830.jpg" height="350" alt="Foto do Membro da Equipe">
-                    <!-- Imagem placeholder (imagem temporária) -->
-                    <h3>Cláudio Lísias</h3>
-                    <!-- Nome do membro -->
-                    <p>Graduando em ADS.s</p>
-                    <!-- Cargo/função -->
-                </div>
+        <!-- Membro 2 -->
+        <div class="team-member">
+          <img src="fotos_da_equipe/victor.jpg" alt="Foto de Victor Moisés">
+          <h3>Victor Moisés</h3>
+          <p>Graduando em ADS.</p>
+        </div>
 
-                <div class="team-member">
-                    <!-- Segundo membro -->
-                    <img src="fotos da equipe/Imagem do WhatsApp minha foto.jpg" height="350" alt="Foto do Membro da Equipe">
-                    <h3>Victor Moisés</h3>
-                    <p>Graduando em ADS.</p>
-                </div>
+        <!-- Membro 3 -->
+        <div class="team-member">
+          <img src="img/NossasFotos/Imagem do WhatsApp de 2025-09-29 à(s) 10.39.09_6b5bed2f.jpg" alt="Foto de Lucas Noberto">
+          <h3>Lucas Noberto</h3>
+          <p>Graduando em ADS.</p>
+        </div>
 
-                <div class="team-member">
-                    <!-- Terceiro membro -->
-                    <img src="aguardando" alt="Foto do Membro da Equipe">
-                    <h3>Lucas Noberto</h3>
-                    <p>Graduando em ADS.</p>
-                </div>
-                
-                <div class="team-member">
-                    <!-- Quarto membro -->
-                    <img src="fotos da equipe/Leo Imagem do WhatsApp de 2025-09-25 à(s) 08.25.45_b7f42dd9.jpg" height="350" alt="Foto do Membro da Equipe">
-                    <h3>Leonardo Rodrigues</h3>
-                    <p>Graduando em ADS.</p>
-            </div>
-        </section>
-    </main>
+        <!-- Membro 4 -->
+        <div class="team-member">
+          <img src="fotos_da_equipe/leonardo.jpg" alt="Foto de Leonardo Rodrigues">
+          <h3>Leonardo Rodrigues</h3>
+          <p>Graduando em ADS.</p>
+        </div>
 
-    <footer>
-        <!-- Rodapé do site (igual em todas as páginas) -->
-        <p>&copy; 2024 Nome da ONG. Todos os direitos reservados.</p>
-        <!-- Texto de copyright -->
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-    <!-- Vincula o arquivo JavaScript (funcionalidades dinâmicas) -->
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; 2024 Nome da ONG. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JS: Toggle Tema -->
+  <script>
+    const body = document.body;
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    // Função para aplicar tema
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add('dark-theme');
+        body.classList.remove('light-theme');
+        themeToggle.textContent = '☀️';
+      } else {
+        body.classList.add('light-theme');
+        body.classList.remove('dark-theme');
+        themeToggle.textContent = '🌙';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    // Recupera tema salvo
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme('light');
+    }
+
+    // Clique no botão alterna o tema
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>

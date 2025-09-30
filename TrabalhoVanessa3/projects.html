@@ -27,36 +27,40 @@
     <p>Conheça as ações que estão mudando comunidades e construindo um futuro melhor para todos nós.</p>
   </section>
 
-  <!-- Grade de Projetos -->
-  <section class="projects-grid">
-    
-    <!-- Card 1 -->
-    <div class="project-card">
+<!-- Card Destaque - Apresentação -->
+<section class="featured-project">
+  <div class="featured-container">
+    <!-- Lado da imagem -->
+    <div class="featured-image">
       <img 
         src="img/Gemini_Generated_Image_gk3iuggk3iuggk3i.png" 
-        alt="Comunidade com acesso a energia solar" 
-        class="card-image"
-      >
-      <div class="card-content">
-        <h3>Promovendo o uso de energia limpa e acessível para comunidades vulneráveis.</h3>
-        <p>
-          Nosso projeto de energia renovável visa levar soluções sustentáveis para comunidades vulneráveis,
-          promovendo o uso de energia limpa e acessível. Através de parcerias com organizações locais
-          e internacionais, implementamos tecnologias que reduzem a dependência de combustíveis fósseis,
-          melhoram a qualidade de vida e fomentam o desenvolvimento econômico.
-        </p>
-
-        <h4>As principais atividades do projeto incluem:</h4>
-        <ul>
-          <li>Instalação de painéis solares em telhados de residências, edifícios ou escolas. Um exemplo interessante é a criação de cooperativas de energia solar em comunidades de baixa renda.</li>
-          <li>Desenvolvimento de sistemas de energia solar <strong>off-grid</strong> para áreas remotas.</li>
-          <li>Implementação de sistemas de aquecimento solar de água para reduzir consumo de energia elétrica ou gás.</li>
-          <li>Desenvolvimento de pontos de carregamento de veículos elétricos movidos a energia solar.</li>
-          <li>Educação e capacitação comunitária para uso e manutenção das tecnologias.</li>
-        </ul>
-        
-      </div>
+        alt="Comunidade com acesso a energia solar">
     </div>
+
+    <!-- Lado do texto -->
+    <div class="featured-content">
+      <h2>Promovendo o uso de energia limpa e acessível para comunidades vulneráveis.</h2>
+      <p>
+        Nosso projeto de energia renovável visa levar soluções sustentáveis para comunidades vulneráveis,
+        promovendo o uso de energia limpa e acessível. Através de parcerias com organizações locais
+        e internacionais, implementamos tecnologias que reduzem a dependência de combustíveis fósseis,
+        melhoram a qualidade de vida e fomentam o desenvolvimento econômico.
+      </p>
+
+      <h3>Nossas principais frentes de atuação:</h3>
+      <ul>
+        <li>Instalação de painéis solares em telhados de residências, edifícios ou escolas.</li>
+        <li>Desenvolvimento de sistemas de energia solar <strong>off-grid</strong> em áreas remotas.</li>
+        <li>Implementação de aquecimento solar de água para reduzir consumo de energia elétrica e gás.</li>
+        <li>Carregadores solares para veículos elétricos.</li>
+        <li>Educação e capacitação comunitária para uso e manutenção das tecnologias.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <!-- Grade de Projetos -->
+  <section class="projects-grid">
 
     <!-- Card 2 -->
     <div class="project-card">
@@ -67,29 +71,21 @@
       >
       <div class="card-content">
         <h3>Energia Solar: Geração Distribuída e Fazendas Solares</h3>
-        
         <h4>Geração Distribuída (Residencial e Comercial)</h4>
         <p>
           Este é o tipo mais comum no Brasil e envolve a instalação de painéis fotovoltaicos em
-          telhados de casas, empresas, escolas ou condomínios. A energia gerada é usada no local,
+          telhados de casas, empresas ou escolas. A energia gerada é usada no local,
           e o excedente é injetado na rede elétrica, gerando créditos para o consumidor.
         </p>
-        
         <ul>
-          <li><strong>Sustentabilidade:</strong> Reduz a demanda por energia da rede (muitas vezes de fontes poluentes) e dá autonomia ao consumidor.</li>
-          <li><strong>Exemplos de Projetos:</strong>
-            <ul>
-              <li><em>Meu Telhado Solar:</em> Instalação em habitações sociais para reduzir contas de energia e combater pobreza energética (ODS 7).</li>
-              <li><em>Escolas Sustentáveis:</em> Sistemas solares em escolas públicas para reduzir custos e ampliar educação ambiental (ODS 4).</li>
-            </ul>
-          </li>
+          <li><strong>Sustentabilidade:</strong> Produção de energia limpa reduzindo a dependência da rede.</li>
+          <li><strong>Exemplo:</strong> "Meu Telhado Solar" e "Escolas Sustentáveis".</li>
         </ul>
-
         <h4>Fazendas Solares</h4>
-        <p>Grandes instalações de painéis solares construídas em áreas abertas, conectadas à rede elétrica principal.</p>
+        <p>Grandes áreas com painéis solares conectados à rede elétrica principal.</p>
         <ul>
-          <li><strong>Geração Compartilhada:</strong> Consórcios ou cooperativas financiando a fazenda e dividindo os créditos de energia.</li>
-          <li><strong>Uso em Indústrias:</strong> Suprir integralmente a energia de complexos industriais, garantindo certificações ambientais.</li>
+          <li><strong>Geração Compartilhada:</strong> Consórcios e cooperativas que dividem créditos de energia.</li>
+          <li><strong>Uso em Indústrias:</strong> Suprimento integral de consumo de grandes complexos.</li>
         </ul>
         <a href="#" class="cta-button small-button">Saiba mais</a>
       </div>
@@ -108,7 +104,8 @@
         <ul>
           <li>Colaboração com governos para políticas de incentivo à energia renovável.</li>
           <li>Parcerias com empresas para projetos de energia limpa em larga escala.</li>
-          <li>Engajamento comunitário para adoção e manutenção de tecnologias sustentáveis.</li>
+          <li>Engajamento comunitário para adoção de tecnologias sustentáveis.</li>
+        </ul>
       </div>
     </div>
 
@@ -121,5 +118,41 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+// Seleciona elementos
+const body = document.body;
+const themeToggle = document.querySelector('.theme-toggle');
+
+// Função para aplicar o tema
+function setTheme(theme) {
+  if (theme === 'dark') {
+    body.classList.add('dark-theme');
+    body.classList.remove('light-theme');
+    themeToggle.textContent = '☀️'; // Ícone de sol no dark
+  } else {
+    body.classList.add('light-theme');
+    body.classList.remove('dark-theme');
+    themeToggle.textContent = '🌙'; // Ícone de lua no light
+  }
+  // Guardar preferência no navegador
+  localStorage.setItem('theme', theme);
+}
+
+// Verifica se já existe preferência no localStorage
+const savedTheme = localStorage.getItem('theme');
+
+// Aplica o tema salvo (ou padrão claro se não houver)
+if (savedTheme) {
+  setTheme(savedTheme);
+} else {
+  setTheme('light');
+}
+
+// Evento de clique no botão
+themeToggle.addEventListener('click', () => {
+  const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+</script>
 </body>
 </html>
