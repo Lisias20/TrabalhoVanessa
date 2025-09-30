@@ -1,172 +1,243 @@
-/* Importação de fontes do Google Fonts */
+/* ========== IMPORTAÇÃO DE FONTES ========== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Estilos globais aplicados a toda a página */
+/* ========== ESTILOS GLOBAIS ========== */
 body {
-    font-family: 'Roboto', sans-serif; /* Define a fonte padrão */
-    margin: 0; /* Remove margens padrão do navegador */
-    padding: 0; /* Remove paddings padrão */
-    background-color: #ffffff; /* Cor de fundo escura */
-    color: #000000; /* Cor do texto clara */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
 }
 
-/* Header e Navegação - Cabeçalho do site */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========== HEADER & NAVBAR ========== */
 header {
-    background-color: #eba40c; /* Cor de fundo do header */
-    padding: 1rem 2rem; /* Espaçamento interno: 1rem topo/baixo, 2rem laterais */
-    display: flex; /* Usa flexbox para alinhamento */
-    justify-content: space-between; /* Espaço entre logo e menu */
-    align-items: center; /* Centraliza verticalmente */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    background-color: #eba40c;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    font-size: 1.5rem; /* Tamanho da fonte do logo */
-    font-weight: bold; /* Texto em negrito */
-    color: #ffffff; /* Cor branca */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-/* Lista de navegação */
 nav ul {
-    list-style: none; /* Remove marcadores da lista */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove paddings */
-    display: table; /* Disposição em linha */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    margin-left: 1.5rem; /* Espaço entre itens do menu */
+    margin-left: 1.5rem;
 }
 
 nav ul li a {
-    color: #ffffff; /* Cor dos links */
-    text-decoration: none; /* Remove sublinhado */
-    font-weight: 600; /* Peso da fonte */
-    transition: color 0.3s; /* Transição suave para hover */
+    color: #ffffff;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-/* Efeito ao passar o mouse nos links */
 nav ul li a:hover {
-    color: #eba40c; /* Muda cor ao hover */
+    color: #333;
 }
 
-/* Botão de Call-to-Action (Chamada para ação) */
+/* Tema Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: inherit;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* ========== BOTÕES (CTA) ========== */
 .cta-button {
-    background-color: #eba40c; /* Cor roxa */
-    color: white; /* Texto branco */
-    padding: 1rem 2rem; /* Espaçamento interno */
-    text-decoration: none; /* Remove sublinhado */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-weight: bold; /* Texto em negrito */
-    transition: background-color 0.3s; /* Transição suave */
-    border: none; /* Remove borda */
-    cursor: pointer; /* Cursor de pointer */
+    background-color: #eba40c;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-
 .cta-button:hover {
-    background-color: #eba40c
-; /* Cor mais clara ao hover */
+    background-color: #ffbb33;
 }
-
-/* Versão menor do botão */
 .small-button {
-    padding: 0.75rem 1.5rem; /* Padding menor */
-    font-size: 0.9rem; /* Fonte menor */
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
 }
 
-/* Seção principal do conteúdo */
-main {
-    padding: 2rem 0; /* Espaçamento vertical */
-}
-
-/* Seção Hero (Banner principal) */
+/* ========== HERO (BANNER PRINCIPAL) ========== */
 .hero {
-    text-align: center; /* Texto centralizado */
-    padding: 5rem 2rem; /* Grande espaçamento */
-    background-color: #eba40c; /* Cor de fundo diferente */
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: #eba40c;
+    color: #fff;
 }
-
 .hero h1 {
-    font-size: 3rem; /* Título grande */
-    margin-bottom: 1rem; /* Espaço abaixo */
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-/* Seção de Notícias */
-.latest-news {
-    padding: 3rem 2rem; /* Espaçamento interno */
-    text-align: center; /* Texto centralizado */
+/* ========== GRID DE PROJETOS ========== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.news-container {
-    display: flex; /* Layout flexbox */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 1.5rem; /* Espaço entre elementos */
-    flex-wrap: wrap; /* Quebra linha se necessário */
-    margin-top: 2rem; /* Espaço acima */
+/* CARD */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.news-item {
-    background-color: #eba40c; /* Fundo escuro */
-    padding: 1.5rem; /* Espaçamento interno */
-    border-radius: 8px; /* Bordas arredondadas */
-    flex-basis: 300px; /* Largura base */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    text-align: left; /* Alinhamento à esquerda */
+/* IMAGEM DO CARD */
+.project-card img.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-/* Media Query para responsividade em telas menores */
+/* CONTEÚDO */
+.card-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.card-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.card-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #eba40c;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.card-content p {
+    margin-bottom: 1rem;
+}
+.card-content ul {
+    margin: 0 0 1rem 1.2rem;
+    padding: 0;
+    list-style: disc;
+}
+.card-content li {
+    margin-bottom: 0.5rem;
+}
+.card-content .cta-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* ========== RESPONSIVIDADE ========== */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Empilha verticalmente */
+        flex-direction: column;
+        align-items: flex-start;
     }
     nav ul {
-        flex-direction: column; /* Menu vertical */
-        align-items: center; /* Centraliza itens */
-        margin-top: 1rem; /* Espaço acima */
+        flex-direction: column;
+        margin-top: 1rem;
     }
-    /* ... outras adaptações mobile */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
-/* ======= TEMAS ======= */
-body.light-theme {
-    background-color: #ffffff;
-    color: #000000;
-}
-
+/* ========== DARK THEME ========== */
 body.dark-theme {
     background-color: #121212;
     color: #f1f1f1;
 }
 
-/* Botão de tema */
-.theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-left: 1rem;
-    color: inherit;
+/* Header no Dark */
+body.dark-theme header {
+    background-color: #1f1f1f;
+}
+body.dark-theme .logo {
+    color: #f1f1f1;
+}
+body.dark-theme nav ul li a {
+    color: #f1f1f1;
+}
+body.dark-theme nav ul li a:hover {
+    color: #eba40c;
 }
 
-
-
-
-
-
-
-.theme-toggle {
-    position: fixed;     /* Sempre visível na tela */
-    top: 15px;           /* Distância do topo */
-    right: 20px;         /* Distância da direita */
-    background: none;    
-    border: none;        
-    font-size: 1.8rem;   /* Tamanho maior */
-    cursor: pointer;
-    color: inherit;      /* Herdar cor do tema */
-    z-index: 1000;       /* Fica por cima do conteúdo */
-    transition: transform 0.2s;
+/* Hero no Dark */
+body.dark-theme .hero {
+    background-color: #1f1f1f;
+    color: #f7f7f7;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.2); /* Efeito ao passar o mouse */
+/* Cards no Dark */
+body.dark-theme .project-card {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+body.dark-theme .card-content h3 {
+    color: #f7f7f7;
+}
+body.dark-theme .card-content h4 {
+    color: #eba40c;
+}
+body.dark-theme .card-content p,
+body.dark-theme .card-content ul li {
+    color: #dcdcdc;
+}
+
+/* Botões no Dark */
+body.dark-theme .cta-button {
+    background-color: #eba40c;
+    color: #121212;
+}
+body.dark-theme .cta-button:hover {
+    background-color: #ffc046;
+    color: #000;
 }
