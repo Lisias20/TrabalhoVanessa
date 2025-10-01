@@ -28,36 +28,144 @@
             <li><a href="contact.html">Contato</a></li>
         </ul>
     </nav>
-    
-    <div class="nav-filler"></div>
+    <style>
+/* Estilos gerais para o layout de cards */
+.cards-container {
+    display: flex; /* Habilita o Flexbox para alinhar os cards */
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px; /* Preenchimento em torno do contêiner */
+    justify-content: center; /* Centraliza os cards na horizontal */
+    flex-wrap: wrap; /* Garante que os cards se empilhem em telas pequenas */
+}
+
+/* Estilos para cada card individual */
+.info-card {
+    flex: 1; /* Permite que o card cresça para preencher o espaço */
+    min-width: 300px; /* Largura mínima para evitar que fiquem muito estreitos */
+    background-color: #ffffff; /* Fundo branco para o card */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+}
+
+/* Estilo para o título principal da seção */
+.page-header h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Estilo para os títulos dentro do card */
+.info-card h2 {
+    color: #28a745; /* Uma cor verde para destacar a sustentabilidade */
+    margin-top: 0;
+    font-size: 1.6em;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    line-height: 1.7;
+    color: #555;
+}
+</style>
+
+<div class="nav-filler"></div>
 </header>
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main>
-    <!-- Introdução: História -->
+<main>
     <section class="page-header hero">
-      <h1>Nossa História e Propósito</h1>
-      <p>
-        Somos um grupo de quatro estudantes do curso de Análise e Desenvolvimento de Sistemas da Faculdade UNINASSAU.
-        Dentro da disciplina de Front-end Framework, decidimos desenvolver um projeto com impacto social e ambiental.
-        Criamos uma página web dedicada à energia sustentável, com foco em educação e conscientização. Nosso objetivo
-        é incentivar a transição energética, substituindo fontes não renováveis por alternativas limpas e renováveis.
-        <br><br>
-        Acreditamos que a tecnologia pode ser uma grande aliada na construção de um futuro mais verde. O projeto nasceu
-        da união entre nossa formação técnica e o desejo de contribuir com a sociedade. Queremos informar, inspirar e
-        mobilizar pessoas para práticas mais sustentáveis.
+        <h1>Nossa História e Propósito.</h1>
+        
+        <div class="cards-container">
+
+            <div class="info-card">
+                <h2>Nossa História:</h2>
+                <p>
+                    Somos um grupo de quatro estudantes do curso de Análise e Desenvolvimento de Sistemas da Faculdade UNINASSAU.
+                    Dentro da disciplina de Front-end Framework, decidimos desenvolver um projeto com impacto social e ambiental.
+                    Criamos uma página web dedicada à energia sustentável, com foco em educação e conscientização.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h2>Nosso Propósito:</h2>
+                <p>
+                    Nosso objetivo é incentivar a transição energética, substituindo fontes não renováveis por alternativas limpas e renováveis.
+                    Acreditamos que a tecnologia pode ser uma grande aliada na construção de um futuro mais verde. O projeto nasceu
+                    da união entre nossa formação técnica e o desejo de contribuir com a sociedade, informando, inspirando e mobilizando
+                    pessoas para práticas mais sustentáveis.
+                </p>
+            </div>
+
+        </div>
+    </section>
+</main>
+    
       </p>
     </section>
 
-    <!-- Missão e Visão -->
-    <section class="content-section">
-      <div class="text-block">
-        <h2>Missão e Visão</h2>
-        <p><strong>MISSÃO:</strong> Promover a conscientização sobre energia sustentável por meio de uma plataforma
-          digital acessível, educativa e interativa. Queremos usar nosso conhecimento em desenvolvimento web para
-          impactar positivamente a sociedade, contribuindo com a transição para fontes de energia limpas e renováveis.
-        </p>
-        <p><strong>VISÃO:</strong> Ser reconhecidos como um projeto acadêmico de referência na área de tecnologia e
-          sustentabilidade, inspirando outras iniciativas e pessoas a adotarem soluções energéticas responsáveis.</p>
+    <style>
+/* Estilos para a seção principal */
+.content-section {
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo leve para destacar a seção */
+}
+
+/* Estilos para o contêiner dos cards (Missão e Visão) */
+.cards-container {
+    display: flex; /* Habilita o Flexbox para alinhar os itens */
+    gap: 20px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+    justify-content: center; /* Centraliza os cards */
+}
+
+/* Estilos para cada card individual */
+.text-card {
+    flex: 1; /* Permite que o card cresça para preencher o espaço */
+    min-width: 300px; /* Largura mínima para evitar que fiquem muito estreitos */
+    background-color: #fff; /* Fundo branco para o card */
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para dar profundidade de card */
+}
+
+/* Estilo para os títulos dentro do card */
+.text-card h3 {
+    margin-top: 0;
+    color: #007bff; /* Uma cor de destaque para o título (pode ser ajustada) */
+    font-size: 1.5em;
+}
+
+/* Estilo para o parágrafo */
+.text-card p {
+    line-height: 1.6;
+    color: #333;
+}
+</style>
+
+<section class="content-section">
+    <h2>Missão e Visão</h2>
+    
+    <div class="cards-container">
+
+        <div class="text-card">
+            <h3>MISSÃO:</h3>
+            <p>Promover a conscientização sobre energia sustentável por meio de uma plataforma
+            digital acessível, educativa e interativa. Queremos usar nosso conhecimento em desenvolvimento web para
+            impactar positivamente a sociedade, contribuindo com a transição para fontes de energia limpas e renováveis.
+            </p>
+        </div>
+
+        <div class="text-card">
+            <h3>VISÃO:</h3>
+            <p>Ser reconhecidos como um projeto acadêmico de referência na área de tecnologia e
+            sustentabilidade, inspirando outras iniciativas e pessoas a adotarem soluções energéticas responsáveis.</p>
+        </div>
+        
+    </div>
+</section>
       </div>
     </section>
 
