@@ -3,7 +3,7 @@
 
 /* ========== VARIÁVEIS CSS (Otimização do tema) ========== */
 :root {
-    --primary-color: #eba40c;
+    --primary-color: #10551f;
     --text-light: #ffffff;
     --text-dark: #333;
     --bg-header-light: var(--primary-color);
