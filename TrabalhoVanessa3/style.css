@@ -385,7 +385,168 @@ body.dark-theme .card p {
 body.dark-theme .lista-centralizada li {
     color: var(--accent-color); /* cor no modo escuro */
 }
+/* ... seu código CSS existente ... */
 
+/* ========== CONTACT PAGE STYLES (PROFISSIONAL COM CARDS) ========== */
+
+.contact-form-section {
+    display: flex;
+    gap: 2.5rem; 
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    flex-wrap: wrap; 
+}
+
+/* Base para Formulário e Bloco de Informações */
+.contact-form-section form, .contact-info-block {
+    flex: 1;
+    min-width: 320px; 
+    padding: 30px; 
+    border-radius: 12px;
+    transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* Estilo do bloco de informações (Container principal da Info) */
+.contact-info-block {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-block h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+    font-size: 1.75rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-info-block .intro-text { /* Estiliza o novo parágrafo introdutório */
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Novo Grid Container para os Cards de Informação */
+.info-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para os cards */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilo do Card Individual de Informação (Info Card) */
+.info-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil para o card */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-card:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.info-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--accent-color);
+}
+
+.info-card .info-label {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.info-card .info-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.info-card a.info-value:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Card de endereço ocupa a linha toda */
+.info-card.full-width-card {
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
+}
+
+
+/* Estilo do formulário (Mantido do passo anterior) */
+.contact-form-section form {
+    background: var(--card-bg-light);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ... Mantém os estilos de form-group, input, textarea, etc. ... */
+.form-group {
+    margin-bottom: 1.7rem;
+}
+.contact-form-section label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+}
+body.dark-theme .contact-form-section label {
+    color: var(--text-light);
+}
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section input[type="subject"],
+.contact-form-section textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+/* ... Mantém os estilos de input:focus, dark-theme, form-status, etc. ... */
+body.dark-theme .contact-form-section form {
+    background: var(--card-bg-dark);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+body.dark-theme .contact-form-section input,
+body.dark-theme .contact-form-section textarea {
+    background-color: #2e2e2e;
+    color: var(--text-light);
+    border-color: #444;
+}
+.form-status.success { /* ... */ }
+.form-status.error { /* ... */ }
+
+@media (max-width: 992px) {
+    .contact-form-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* Media Query para responsividade do grid de cards */
+@media (max-width: 550px) {
+    .info-card-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+}
 
 
 
