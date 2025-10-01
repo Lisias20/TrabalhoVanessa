@@ -526,3 +526,23 @@ body.dark-theme .team-member img {
         font-size: 1.6rem;
     }
 }
+
+h2, h3 {
+    text-align: center;
+}
+.about-summary {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.lista-centralizada {
+    display: inline-block; /* deixa a lista centralizada */
+    text-align: left;      /* mantém os itens alinhados à esquerda */
+    margin: 20px auto;
+    padding-left: 20px;    /* dá espaço para as bolinhas da lista */
+}
+
+.lista-centralizada li {
+    margin-bottom: 10px;   /* espaçamento entre os itens */
+    line-height: 1.6;      /* altura da linha */
+}
