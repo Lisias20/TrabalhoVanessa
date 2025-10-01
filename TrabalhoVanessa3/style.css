@@ -301,7 +301,6 @@ body.dark-theme .featured-content p,
 body.dark-theme .featured-content li { color:#f1f1f1;}
 
 /*=========== CSS DO INDEX CORREGIDO ===========*/
-
 .why-summary {
     text-align: center;
     margin: 40px auto;
@@ -325,7 +324,6 @@ body.dark-theme .featured-content li { color:#f1f1f1;}
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
-
 .card h3 {
     margin-bottom: 10px;
     font-size: 1.2rem;
