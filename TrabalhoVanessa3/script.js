@@ -1,72 +1,75 @@
-// Espera o DOM (Document Object Model) carregar completamente
+// ==== Notícias ==== 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Array de objetos contendo dados das notícias
     const newsData = [
         { 
             title: "Título da Notícia 1", 
             description: "Descrição curta sobre a primeira notícia...", 
             link: "#" 
         },
-        // ... mais notícias
+        { 
+            title: "Energia Solar cresce 20% no Brasil", 
+            description: "Levantamento aponta aumento de painéis solares em telhados residenciais.", 
+            link: "#"
+        },
+        { 
+            title: "Nordeste bate recorde em energia eólica", 
+            description: "Estados nordestinos produzem mais energia eólica do que consomem.", 
+            link: "#"
+        },
     ];
 
-    // Seleciona o container onde as notícias serão inseridas
     const newsContainer = document.querySelector('.news-container');
 
-    // Para cada item no array newsData...
-    newsData.forEach(newsItem => {
-        // Cria um elemento article para cada notícia
-        const article = document.createElement('article');
-        article.classList.add('news-item'); // Adiciona classe CSS
-        
-        // Preenche o HTML interno do article com os dados
-        article.innerHTML = `
-            <h3>${newsItem.title}</h3> <!-- Interpolação de variável -->
-            <p>${newsItem.description}</p>
-            <a href="${newsItem.link}">Leia mais</a>
-        `;
-        
-        // Adiciona o article criado ao container
-        newsContainer.appendChild(article);
-    });
+    // Só executa se existir a seção de notícias
+    if (newsContainer) {
+        newsData.forEach(newsItem => {
+            const article = document.createElement('article');
+            article.classList.add('news-item'); 
+            
+            article.innerHTML = `
+                <h3>${newsItem.title}</h3>
+                <p>${newsItem.description}</p>
+                <a href="${newsItem.link}" class="cta-button small-button">Leia mais</a>
+            `;
+            
+            newsContainer.appendChild(article);
+        });
+    }
 });
 
-// Botão de alternância de tema
+
+// ==== Tema (Light / Dark) ====
 const themeToggleBtn = document.getElementById('theme-toggle');
 
-// Checa se já existe tema salvo no localStorage
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    document.body.classList.add(savedTheme);
-} else {
-    document.body.classList.add('light-theme'); // padrão
+// Função para aplicar um tema
+function setTheme(theme) {
+    document.body.classList.remove('light-theme', 'dark-theme');
+    document.body.classList.add(theme);
+
+    localStorage.setItem('theme', theme);
+
+    updateThemeIcon(theme);
 }
 
-// Atualiza o ícone conforme o tema
-function updateThemeIcon() {
-    if (document.body.classList.contains('dark-theme')) {
-        themeToggleBtn.textContent = "🌙"; 
+// Atualiza o ícone do botão conforme o tema
+function updateThemeIcon(theme) {
+    if (theme === 'dark-theme') {
+        themeToggleBtn.textContent = "☀️"; // no dark, botão mostra sol (para clarear)
     } else {
-        themeToggleBtn.textContent = "🌞"; 
+        themeToggleBtn.textContent = "🌙"; // no light, botão mostra lua (para escurecer)
     }
 }
 
-updateThemeIcon();
+// Pega tema salvo ou aplica light por padrão
+const savedTheme = localStorage.getItem('theme') || 'light-theme';
+setTheme(savedTheme);
 
-// Alternar tema ao clicar
+// Evento de clique para alternar
 themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
-
-    // Salva no localStorage
-    if (document.body.classList.contains('dark-theme')) {
-        localStorage.setItem('theme', 'dark-theme');
-    } else {
-        localStorage.setItem('theme', 'light-theme');
-    }
-
+    const currentTheme = document.body.classList.contains('dark-theme') 
+        ? 'dark-theme' : 'light-theme';
     
-    updateThemeIcon();
+    const newTheme = (currentTheme === 'dark-theme') ? 'light-theme' : 'dark-theme';
+    setTheme(newTheme);
 });
-
