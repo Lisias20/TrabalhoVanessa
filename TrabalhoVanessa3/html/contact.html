@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Sua ONG</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   
+   
+    <script type="text/javascript">
+        // 2. Inicializa o EmailJS com sua Public Key
+        // **ATENÇÃO: Substitua 'SUA_PUBLIC_KEY' pela chave que você pegou no EmailJS**
+        (function() {
+            emailjs.init({
+                publicKey: "SUA_PUBLIC_KEY", 
+            });
+        })();
+    </script>
+</head>
+<body class="light-theme">
+ <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <header>
+    <div class="logo">
+        <a href='index.html'>
+            <img src='https://i.postimg.cc/dLmWLvYJ/Whats-App-Image-2025-09-30-at-12-54-39-removebg-preview-removebg-preview.png' border='0' alt='Logo ONG'/>
+        </a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="projects.html">Nossos Projetos</a></li>
+            <li><a href="contact.html" class="active">Contato</a></li> </ul>
+    </nav>
+    
+    <div class="nav-filler"></div>
+</header>
+    <main>
+        <section class="page-header hero">
+            <h1>Fale Conosco</h1>
+            <p>Tem uma ideia de parceria? Uma dúvida sobre nossos projetos? Quer saber como ajudar? Entre em contato e vamos construir um futuro mais verde juntos!</p>
+        </section>
+
+        <section class="contact-form-section">
+            
+            <div class="contact-info-block">
+                <h2>Canais de Comunicação Empresarial</h2>
+                <p class="intro-text">Nossa equipe está pronta para responder suas questões e discutir parcerias estratégicas. Priorizamos a comunicação eficiente e rápida. Escolha o canal ideal:</p>
+                
+                <div class="info-card-grid">
+                    
+                    <div class="info-card">
+                        <span class="icon">📧</span>
+                        <p class="info-label">E-mail Principal</p>
+                        <a href="mailto:claudiolisiasrrf@gmail.com" class="info-value">claudiolisiasrrf@gmail.com</a>
+                    </div>
+                    
+                    <div class="info-card">
+                        <span class="icon">📱</span>
+                        <p class="info-label">WhatsApp Corporativo</p>
+                        <a href="https://wa.me/5581981105148" class="info-value">+55 (81) 98110-5148</a>
+                    </div>
+                    
+                    <div class="info-card full-width-card">
+                        <span class="icon">📍</span>
+                        <p class="info-label">Endereço (Escritório Central)</p>
+                        <p class="info-value">R. Jonathas de Vasconcelos, 316 - Boa Viagem, Recife - PE, 51021-140</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <form id="contact-form">
+                
+                <div class="form-group">
+                    <label for="name">Nome Completo / Empresa:</label>
+                    <input type="text" id="name" name="from_name" required placeholder="Seu nome ou nome da empresa">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail para Contato (Obrigatório):</label>
+                    <input type="email" id="email" name="reply_to" required placeholder="seu.email@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Assunto da Mensagem:</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Ex: Parceria Estratégica, Dúvida, Voluntariado">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem Detalhada:</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Descreva sua questão, proposta ou solicitação aqui com o máximo de detalhes."></textarea>
+                </div>
+
+                <button type="submit" class="cta-button">Enviar Proposta/Mensagem</button>
+            </form>
+
+            <div id="form-status" class="form-status"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Energia Sustentavel UNINASSAU. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+// ==== JS do Tema (garantindo que funciona na página) ====
+const body = document.body;
+const themeToggle = document.querySelector('.theme-toggle');
+
+function setTheme(theme) {
+  if (theme === 'dark') {
+    body.classList.add('dark-theme');
+    body.classList.remove('light-theme');
+    themeToggle.textContent = '☀️'; 
+  } else {
+    body.classList.add('light-theme');
+    body.classList.remove('dark-theme');
+    themeToggle.textContent = '🌙'; 
+  }
+  localStorage.setItem('theme', theme);
+}
+
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme) {
+  setTheme(savedTheme === 'dark-theme' ? 'dark' : 'light'); 
+} else {
+  setTheme('light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
+// ==== JS de Funcionalidade do Formulário (EmailJS) ====
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Serviço e Template ID do EmailJS
+    // **ATENÇÃO: Substitua 'SEU_SERVICE_ID' e 'SEU_TEMPLATE_ID' pelas suas IDs do EmailJS**
+    const serviceID = "SEU_SERVICE_ID"; 
+    const templateID = "SEU_TEMPLATE_ID";
+
+    // Envio do formulário
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            formStatus.textContent = "✅ Mensagem enviada com sucesso! Responderemos ao seu e-mail (claudiolisiasrrf@gmail.com) em breve.";
+            formStatus.classList.add('success');
+            formStatus.classList.remove('error');
+            form.reset(); 
+        }, (err) => {
+            formStatus.textContent = "❌ Houve um erro ao enviar. Tente novamente ou envie diretamente para claudiolisiasrrf@gmail.com. Erro: " + JSON.stringify(err);
+            formStatus.classList.add('error');
+            formStatus.classList.remove('success');
+        });
+});
+    </script>
+</body>
+</html>

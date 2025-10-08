@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua ONG - Juntos por um futuro melhor</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle">🌞</button>
+   <header>
+    <div class="logo">
+        <a href='index.html'>
+            <img src='https://i.postimg.cc/dLmWLvYJ/Whats-App-Image-2025-09-30-at-12-54-39-removebg-preview-removebg-preview.png' border='0' alt='Logo ONG'/>
+        </a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li> 
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="projects.html">Nossos Projetos</a></li>
+            <li><a href="contact.html">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div class="nav-filler"></div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Energia Limpa e Acessível</h1>
+            <p>Garantir acesso universal a energia confiável, sustentável e acessível até 2030 é essencial para a saúde, educação, negócios e desenvolvimento sustentável.</p> <br>
+            <a href="projects.html" class="cta-button">Conheça Nossos Projetos</a>
+        </section>
+
+    <section class="why-summary">
+    <h2 class="titulo-centralizado">Por que isso importa?</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Desafio Global</h3>
+            <p>No ritmo atual, 645 milhões de pessoas ainda estarão sem eletricidade em 2030 e 1,8 bilhão continuarão usando combustíveis poluentes para cozinhar.</p>
+        </div>
+        <div class="card">
+            <h3>Impacto do Acesso</h3>
+            <p>Sem energia, clínicas não armazenam vacinas, escolas não funcionam plenamente e mulheres e meninas gastam horas buscando água e lenha.</p>
+        </div>
+        <div class="card">
+            <h3>Soluções Sustentáveis</h3>
+            <p>Investir em energia solar, eólica e térmica, além de eficiência energética, é essencial para reduzir emissões e promover crescimento.</p>
+        </div>
+    </div>
+    </section>
+
+
+        <section class="why-summary">
+    <h2 class="titulo-centralizado">O que podemos fazer?</h2>
+    <div class="cards-container">
+        <ul class="lista-centralizada">
+                <li>Países: investir em renováveis e infraestrutura sustentável.</li>
+                <li>Empresas: adotar energia 100% limpa.</li>
+                <li>Empregadores: priorizar teletrabalho e transporte sustentável.</li>
+                <li>Investidores: apoiar novos serviços e tecnologias.</li>
+                <li>Pessoas: economizar energia e optar por transporte limpo...</li>
+            </ul>
+        </div>
+    <a href="projects.html" class="cta-button">Saiba mais</a>
+    </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Energia Sustentavel UNINASSAU. Todos os direitos reservados.</p>
+    </footer>
+
+    
+    <script>
+// Seleciona elementos
+const body = document.body;
+const themeToggle = document.querySelector('.theme-toggle');
+
+// Função para aplicar o tema
+function setTheme(theme) {
+  if (theme === 'dark') {
+    body.classList.add('dark-theme');
+    body.classList.remove('light-theme');
+    themeToggle.textContent = '☀'; // Ícone de sol no dark
+  } else {
+    body.classList.add('light-theme');
+    body.classList.remove('dark-theme');
+    themeToggle.textContent = '🌙'; // Ícone de lua no light
+  }
+  // Guardar preferência no navegador
+  localStorage.setItem('theme', theme);
+}
+
+// Verifica se já existe preferência no localStorage
+const savedTheme = localStorage.getItem('theme');
+
+// Aplica o tema salvo (ou padrão claro se não houver)
+if (savedTheme) {
+  setTheme(savedTheme);
+} else {
+  setTheme('light');
+}
+
+// Evento de clique no botão
+themeToggle.addEventListener('click', () => {
+  const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+</script>
+</body>
+</html>
